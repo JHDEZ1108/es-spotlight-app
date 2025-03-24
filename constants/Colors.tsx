@@ -1,37 +1,37 @@
 // constants/Colors.ts
 export const Colors = {
   light: {
-    primary: "#0057b7",  // Used for interactive elements like buttons and links.
-    primaryVariant: "#004494",  // Used for hover states on interactive elements.
-    secondary: "#ff8300",  // Used for accents that require less prominence than primary.
-    secondaryVariant: "#c65f00",  // Used for hover states on secondary interactive elements.
-    background: "#ffffff",  // Main background color for all screens.
-    surface: "#f5f5f5",  // Background color for elements like cards and modals.
+    primary: "#002925",  // Used for interactive elements like buttons and links.
+    primaryVariant: "#0b4a43",  // Used for hover states on interactive elements.
+    secondary: "#9FC131",  // Used for accents that require less prominence than primary.
+    secondaryVariant: "#B5D352",  // Used for hover states on secondary interactive elements.
+    background: "#fdffff",  // Main background color for all screens.
+    surface: "#fffffd",  // Background color for elements like cards and modals.
     error: "#D32F2F",  // Used for error messages and icons.
-    onPrimary: "#ffffff",  // Text color on primary background.
-    onSecondary: "#ffffff",  // Text color on secondary background.
+    onPrimary: "#fdffff",  // Text color on primary background.
+    onSecondary: "#fdffff",  // Text color on secondary background.
     onBackground: "#1c1c1c",  // Primary text color on the main background.
-    onError: "#ffffff",  // Text color on error backgrounds.
+    onError: "#fdffff",  // Text color on error backgrounds.
     onSurface: "#1c1c1c",  // Text color on surface backgrounds.
-    disabled: "#c7c7c7",  // Color for text and icons that are not interactive.
-    border: "#e0e0e0",  // Color for outlining components and dividing spaces.
-    divider: "#e0e0e0",  // Used to subtly divide elements without strong separation.
+    disabled: "#fdffff",  // Color for text and icons that are not interactive.
+    border: "#B5D352",  // Color for outlining components and dividing spaces.
+    divider: "#002925",  // Used to subtly divide elements without strong separation.
   },
   dark: {
-    primary: "#58a6ff",  
-    primaryVariant: "#0369a1",  
-    secondary: "#fb923c",  
-    secondaryVariant: "#c2410c",  
+    primary: "#12766B",  
+    primaryVariant: "#2a554f",  
+    secondary: "#C6DD7B",  
+    secondaryVariant: "#9FC131",  
     background: "#121212",  
-    surface: "#333333",  
+    surface: "#1A1A1A",  
     error: "#CF6679",  
-    onPrimary: "#003350",  
-    onSecondary: "#422800",  
-    onBackground: "#e1e1e1",  
-    onError: "#680000",  
+    onPrimary: "#fdffff",  
+    onSecondary: "#fdffff",  
+    onBackground: "#fdffff",  
+    onError: "#fdffff",  
     onSurface: "#e1e1e1",  
-    disabled: "#525252",  
-    border: "#525252",  
-    divider: "#525252",  
+    disabled: "#e9e9e9",  
+    border: "#9FC131",  
+    divider: "#005c53",  
   },
 };

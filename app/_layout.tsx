@@ -1,9 +1,9 @@
+import React, { useCallback } from 'react';
+import { StyleSheet, StatusBar } from 'react-native';
 import { Stack } from "expo-router";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { ThemeProvider, useTheme } from "@/context/ThemeProvider";
 import * as SplashScreen from "expo-splash-screen";
-import { useCallback } from "react";
-import { View, StyleSheet, StatusBar } from "react-native";
 import { useFonts, Vazirmatn_300Light, Vazirmatn_400Regular, Vazirmatn_600SemiBold } from "@expo-google-fonts/vazirmatn";
 import { NotificationProvider } from "@/context/NotificationContext";
 import Toast from "@/components/Toast";
@@ -12,38 +12,40 @@ import Toast from "@/components/Toast";
 SplashScreen.preventAutoHideAsync();
 
 function RootLayoutContent() {
-  const { theme, isDark } = useTheme(); // Access theme context
+  const { theme, isDark } = useTheme();
   const [fontsLoaded] = useFonts({
     Vazirmatn_300Light,
     Vazirmatn_400Regular,
     Vazirmatn_600SemiBold,
   });
 
-  // Hide splash screen when fonts are loaded
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
       await SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
 
-  // Show blank screen if fonts are not loaded
   if (!fontsLoaded) {
     return null;
   }
 
   return (
     <SafeAreaProvider onLayout={onLayoutRootView}>
-      <StatusBar 
-        translucent 
-        backgroundColor="transparent" 
-        barStyle={isDark ? "light-content" : "dark-content"} // Change based on theme
-      />
-      <View style={[styles.container, { backgroundColor: theme.background }]}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: theme.background }}>
+        <StatusBar 
+          translucent 
+          backgroundColor="transparent" 
+          barStyle={isDark ? "light-content" : "dark-content"}
+        />
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="index" />
+          <Stack.Screen name="bookmarks" />
+          <Stack.Screen name="create" />
+          <Stack.Screen name="notifications" />
+          <Stack.Screen name="profile" />
         </Stack>
         <Toast />
-      </View>
+      </SafeAreaView>
     </SafeAreaProvider>
   );
 }
