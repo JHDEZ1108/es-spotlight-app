@@ -16,6 +16,7 @@ declare module 'ThemeTypes' {
     disabled: string;
     border: string;
     divider: string;
+    shadow: string;
   }
 
   export interface Theme {

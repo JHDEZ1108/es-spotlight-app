@@ -16,6 +16,7 @@ export const Colors = {
     disabled: "#fdffff",  // Color for text and icons that are not interactive.
     border: "#B5D352",  // Color for outlining components and dividing spaces.
     divider: "#002925",  // Used to subtly divide elements without strong separation.
+    shadow: "#000"
   },
   dark: {
     primary: "#12766B",  
@@ -33,5 +34,6 @@ export const Colors = {
     disabled: "#e9e9e9",  
     border: "#9FC131",  
     divider: "#005c53",  
+    shadow: "#fff"
   },
 };

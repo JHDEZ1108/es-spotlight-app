@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { useTheme } from '@/context/ThemeProvider'; 
-import { createStyles } from '@/styles/auth.styles';
+import { createStyles } from '@/styles/home.styles';
 import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Index() {
