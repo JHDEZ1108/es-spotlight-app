@@ -45,7 +45,7 @@ export default defineSchema({
     .index("by_both", ["followerId", "followingId"]),
   
   // Notifications table to alert users of interactions
-  norifications: defineTable({
+  notifications: defineTable({
     receiverId: v.id("users"), 
     senderId: v.id("users"),
     type: v.union(v.literal("like"), v.literal("comment"), v.literal("follow")), // Type of notification
