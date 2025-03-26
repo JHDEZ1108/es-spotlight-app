@@ -61,8 +61,8 @@ export const getFeedPost = query({
     const postsWithInfo = await Promise.all(
       posts.map(async(post) => {
         // Retrieve author's data based on user ID associated with each post.
-        const postAuthor = await ctx.db.get(post.userId);
-        
+        const postAuthor = (await ctx.db.get(post.userId))!;
+
         // Check if the current user has liked the post.
         const like = await ctx.db.query("likes")
           .withIndex("by_user_and_post", 

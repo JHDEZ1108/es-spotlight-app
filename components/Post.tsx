@@ -7,7 +7,28 @@ import { useTheme } from '@/context/ThemeProvider';
 import { createStyles } from '@/styles/feed.styles';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function Post({post} : {post:any}) {
+import { Id } from '@/convex/_generated/dataModel';
+
+type PostProps = {
+  post: {
+    _id: Id<"posts">;
+    imageUrl: string;
+    caption?: string;
+    likes: number;
+    comments: number;
+    _creationTime: number;
+    isLiked: boolean;
+    isBookmarked: boolean;
+    author: {
+      _id: string;
+      username: string;
+      image: string;
+    };
+  };
+};
+
+
+export default function Post({post} : PostProps) {
   const { theme } = useTheme();
   const styles = createStyles(theme);
 
