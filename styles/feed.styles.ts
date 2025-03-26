@@ -22,7 +22,7 @@ export function createStyles(theme: ThemeColors) {
     headerTitle: {
       fontSize: 24,
       fontFamily: "JetBrainsMono-Medium",
-      color: theme.secondary,
+      color: theme.primary,
     },
     storiesContainer: {
       paddingVertical: 12,
@@ -41,7 +41,7 @@ export function createStyles(theme: ThemeColors) {
       padding: 2,
       backgroundColor: theme.background,
       borderWidth: 2,
-      borderColor: theme.primary,
+      borderColor: theme.secondary,
       marginBottom: 4,
     },
     noStory: {
