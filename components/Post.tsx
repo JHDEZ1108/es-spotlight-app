@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { Link } from 'expo-router';
 import { Image } from 'expo-image';
@@ -8,6 +8,8 @@ import { createStyles } from '@/styles/feed.styles';
 import { Ionicons } from '@expo/vector-icons';
 
 import { Id } from '@/convex/_generated/dataModel';
+import { useMutation } from 'convex/react';
+import { api } from '@/convex/_generated/api';
 
 type PostProps = {
   post: {
@@ -31,6 +33,21 @@ type PostProps = {
 export default function Post({post} : PostProps) {
   const { theme } = useTheme();
   const styles = createStyles(theme);
+  
+  const [isLiked, setIsLiked] = useState(post.isLiked);
+  const [likesCount, setLikesCount] = useState(post.likes);
+  
+  const toggleLike = useMutation(api.posts.toggleLike);
+  
+  const handleLike = async () =>{
+    try {
+      const newIsLiked = await toggleLike({postId: post._id});
+      setIsLiked(newIsLiked);
+      setLikesCount((prev) => (newIsLiked ? prev + 1 : prev - 1));
+    } catch (error) {
+      console.error("Error toggling like: ", error);
+    }
+  };
 
   return (
     <View style={styles.post}>
@@ -69,8 +86,12 @@ export default function Post({post} : PostProps) {
       {/* POST ACTIONS */}
       <View style={styles.postActions}>
         <View style={styles.postActionsLeft}>
-          <TouchableOpacity>
-            <Ionicons name="heart-outline" size={24} color={theme.onBackground} />
+          <TouchableOpacity onPress={handleLike}>
+            <Ionicons 
+              name={isLiked ? "heart" : "heart-outline"} 
+              size={24} 
+              color={theme.secondary}
+            />
           </TouchableOpacity>
           <TouchableOpacity>
             <Ionicons name="chatbubble-outline" size={22} color={theme.onBackground} />
@@ -83,6 +104,9 @@ export default function Post({post} : PostProps) {
       
       {/* POST INFO */}
       <View style={styles.postInfo}>
+        <Text style={styles.likesText}>
+          {likesCount > 0 ? `${likesCount.toLocaleString()} likes` : "Be the first to like"}
+        </Text>
         {post.caption && (
           <View style={styles.captionContainer}>
             <Text style={styles.captionUsername}>{post.author.username}</Text>
