@@ -52,6 +52,14 @@ export default function Post({post} : PostProps) {
   
   const [commentsCount, setCommetsCount] = useState(post.comments);
   const [showComments, setShowComments] = useState(false);
+  
+  const [isBookmarked, setIsBookmarked] = useState(post.isBookmarked);
+  const toggleBookmark = useMutation(api.bookmarks.toggleBookmark);
+  
+  const handleBookmark = async () => {
+    const newIsBookmarked = await toggleBookmark({ postId: post._id });
+    setIsBookmarked(newIsBookmarked);
+  }
 
   return (
     <View style={styles.post}>
@@ -101,8 +109,14 @@ export default function Post({post} : PostProps) {
             <Ionicons name="chatbubble-outline" size={22} color={theme.onBackground} />
           </TouchableOpacity>
         </View>
-        <TouchableOpacity>
-          <Ionicons name="bookmark-outline" size={22} color={theme.onBackground} />
+        <TouchableOpacity
+          onPress={handleBookmark}
+        >
+          <Ionicons 
+            name={isBookmarked ? "bookmark" : "bookmark-outline"}
+            size={22} 
+            color={theme.onBackground} 
+          />
         </TouchableOpacity>
       </View>
       
