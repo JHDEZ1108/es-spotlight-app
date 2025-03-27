@@ -10,6 +10,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { Id } from '@/convex/_generated/dataModel';
 import { useMutation } from 'convex/react';
 import { api } from '@/convex/_generated/api';
+import CommentsModal from './CommentsModal';
+import { formatDistanceToNow } from 'date-fns';
 
 type PostProps = {
   post: {
@@ -29,7 +31,6 @@ type PostProps = {
   };
 };
 
-
 export default function Post({post} : PostProps) {
   const { theme } = useTheme();
   const styles = createStyles(theme);
@@ -48,6 +49,9 @@ export default function Post({post} : PostProps) {
       console.error("Error toggling like: ", error);
     }
   };
+  
+  const [commentsCount, setCommetsCount] = useState(post.comments);
+  const [showComments, setShowComments] = useState(false);
 
   return (
     <View style={styles.post}>
@@ -93,7 +97,7 @@ export default function Post({post} : PostProps) {
               color={theme.secondary}
             />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => setShowComments(true)}>
             <Ionicons name="chatbubble-outline" size={22} color={theme.onBackground} />
           </TouchableOpacity>
         </View>
@@ -113,11 +117,26 @@ export default function Post({post} : PostProps) {
             <Text style={styles.captionText}>{post.caption}</Text>
           </View>
         )}
-        <TouchableOpacity>
-          <Text style={styles.commentsText}>View all 2 comments</Text>
-        </TouchableOpacity>
-        <Text style={styles.timeAgo}>2 hours ago</Text>
+        
+        {commentsCount > 0 && (
+          <TouchableOpacity onPress={() => setShowComments(true)}>
+            <Text style={styles.commentsText}>
+              View all {commentsCount} comments
+            </Text>
+          </TouchableOpacity>
+        )}
+        <Text style={styles.timeAgo}>
+          {formatDistanceToNow(post._creationTime, {addSuffix: true})}
+        </Text>
       </View>
+      
+      <CommentsModal 
+        postId={post._id}
+        visible={showComments}
+        onClose={() => setShowComments(false)}
+        onCommentAdded={() => setCommetsCount((prev) => prev + 1 )}
+      />
+      
     </View>
   )
 }
