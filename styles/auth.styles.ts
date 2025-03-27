@@ -8,7 +8,8 @@ export function createStyles(theme: ThemeColors) {
   return StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: theme.background
+      backgroundColor: theme.background,
+      fontFamily: 'Vazirmatn_400Regular'
     },
     brandSection:{
       alignItems: 'center',

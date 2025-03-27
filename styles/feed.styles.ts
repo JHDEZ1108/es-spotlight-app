@@ -21,7 +21,7 @@ export function createStyles(theme: ThemeColors) {
     },
     headerTitle: {
       fontSize: 24,
-      fontFamily: "JetBrainsMono-Medium",
+      fontFamily: "CherryCreamSoda_400Regular",
       color: theme.primary,
     },
     storiesContainer: {
@@ -126,7 +126,7 @@ export function createStyles(theme: ThemeColors) {
     },
     commentsText: {
       fontSize: 14,
-      color: theme.disabled,
+      color: theme.onBackground,
       marginBottom: 4,
   },
     timeAgo: {

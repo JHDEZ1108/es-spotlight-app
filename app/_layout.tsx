@@ -1,11 +1,10 @@
 import React, { useCallback } from 'react';
 import { StyleSheet, StatusBar } from 'react-native';
-import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Toast from "@/components/Toast";
 import { useFonts, Vazirmatn_300Light, Vazirmatn_400Regular, Vazirmatn_600SemiBold } from "@expo-google-fonts/vazirmatn";
-
+import { CherryCreamSoda_400Regular  } from '@expo-google-fonts/cherry-cream-soda'
 import { ThemeProvider, useTheme } from "@/context/ThemeProvider";
 import { NotificationProvider } from "@/context/NotificationContext";
 import AuthenticationProvider from '@/context/AuthenticaticationProvider';
@@ -20,6 +19,7 @@ function RootLayoutContent() {
     Vazirmatn_300Light,
     Vazirmatn_400Regular,
     Vazirmatn_600SemiBold,
+    CherryCreamSoda_400Regular
   });
 
   const onLayoutRootView = useCallback(async () => {

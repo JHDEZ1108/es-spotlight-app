@@ -9,6 +9,7 @@ export function createStyles(theme: ThemeColors) {
       backgroundColor: theme.background,
       alignItems: 'center',
       justifyContent: 'center',
+      fontFamily: "Vazirmatn_400Regular"
     },
     header: {
       flexDirection: "row",

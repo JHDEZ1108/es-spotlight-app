@@ -13,7 +13,7 @@ export const Colors = {
     onBackground: "#1c1c1c",  // Primary text color on the main background.
     onError: "#fdffff",  // Text color on error backgrounds.
     onSurface: "#1c1c1c",  // Text color on surface backgrounds.
-    disabled: "#fdffff",  // Color for text and icons that are not interactive.
+    disabled: "#505050",  // Color for text and icons that are not interactive.
     border: "#B5D352",  // Color for outlining components and dividing spaces.
     divider: "#002925",  // Used to subtly divide elements without strong separation.
     shadow: "#000"

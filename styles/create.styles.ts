@@ -9,6 +9,7 @@ export function createStyles(theme: ThemeColors) {
     container: {
       flex: 1,
       backgroundColor: theme.background,
+      fontFamily: "Vazirmatn_400Regular"
     },
     contentContainer: {
       flex: 1
