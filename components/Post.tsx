@@ -38,21 +38,21 @@ export default function Post({ post }: PostProps) {
 
   // State for likes
   const [isLiked, setIsLiked] = useState(post.isLiked);
-  const [likesCount, setLikesCount] = useState(post.likes);
+  // const [likesCount, setLikesCount] = useState(post.likes);
   const toggleLike = useMutation(api.posts.toggleLike);
 
   const handleLike = async () => {
     try {
       const newIsLiked = await toggleLike({ postId: post._id });
       setIsLiked(newIsLiked);
-      setLikesCount((prev) => (newIsLiked ? prev + 1 : prev - 1));
+      // setLikesCount((prev) => (newIsLiked ? prev + 1 : prev - 1));
     } catch (error) {
       console.error("Error toggling like:", error);
     }
   };
 
   // State for comments
-  const [commentsCount, setCommentsCount] = useState(post.comments);
+  // const [commentsCount, setCommentsCount] = useState(post.comments);
   const [showComments, setShowComments] = useState(false);
 
   // State for bookmarks
@@ -152,7 +152,7 @@ export default function Post({ post }: PostProps) {
       {/* === Post Info Section === */}
       <View style={styles.postInfo}>
         <Text style={styles.likesText}>
-          {likesCount > 0 ? `${likesCount.toLocaleString()} likes` : "Be the first to like"}
+          {post.likes > 0 ? `${post.likes.toLocaleString()} likes` : "Be the first to like"}
         </Text>
 
         {post.caption && (
@@ -162,10 +162,10 @@ export default function Post({ post }: PostProps) {
           </View>
         )}
 
-        {commentsCount > 0 && (
+        {post.comments > 0 && (
           <TouchableOpacity onPress={() => setShowComments(true)}>
             <Text style={styles.commentsText}>
-              View all {commentsCount} comments
+              View all {post.comments} comments
             </Text>
           </TouchableOpacity>
         )}
@@ -180,7 +180,7 @@ export default function Post({ post }: PostProps) {
         postId={post._id}
         visible={showComments}
         onClose={() => setShowComments(false)}
-        onCommentAdded={() => setCommentsCount((prev) => prev + 1)}
+        // onCommentAdded={() => setCommentsCount((prev) => prev + 1)}
       />
     </View>
   );
