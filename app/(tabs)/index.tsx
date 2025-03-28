@@ -1,5 +1,5 @@
-import React from 'react';
-import { FlatList, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { FlatList, RefreshControl, Text, View } from 'react-native';
 
 import { useTheme } from '@/context/ThemeProvider'; 
 import { createStyles } from '@/styles/feed.styles';
@@ -18,10 +18,19 @@ export default function Index() {
   const { theme } = useTheme();
   const styles = createStyles(theme);
   
+  const [refreshing, setRefreshing] = useState(false);
   
   const posts = useQuery(api.posts.getFeedPost);
   if(posts === undefined) return <Loader />
   if(posts.length === 0) return <NoPostsFound theme={theme}/>
+  
+  const onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+      //tanstack query
+    }, 2000)
+  }
   
   return (
     <View style={styles.container}>
@@ -39,6 +48,13 @@ export default function Index() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 80}}
         ListHeaderComponent={<StoriesSection styles={styles}/>}
+        refreshControl={
+          <RefreshControl 
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            tintColor={theme.secondary}
+          />
+        }
       />
       
     </View>
