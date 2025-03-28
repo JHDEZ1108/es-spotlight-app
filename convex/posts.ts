@@ -137,7 +137,7 @@ export const toggleLike = mutation({
   },
 });
 
-
+// Delete Posts
 export const deletePost = mutation({
   args: { postId: v.id("posts") },
 
@@ -205,3 +205,25 @@ export const deletePost = mutation({
   },
 });
 
+// Get post by user
+export const getPostsByUser = query({
+  args: {
+    userId: v.optional(v.id("users")), // Optional userId argument
+  },
+  handler: async (ctx, args) => {
+    // Get user from args or use authenticated user
+    const user = args.userId 
+      ? await ctx.db.get(args.userId) 
+      : await getAuthenticatedUser(ctx);
+
+    if (!user) throw new Error("User not found");
+
+    // Fetch posts using index by userId
+    const posts = await ctx.db
+      .query("posts")
+      .withIndex("by_user", (q) => q.eq("userId", args.userId || user._id))
+      .collect();
+
+    return posts;
+  },
+});
