@@ -72,45 +72,45 @@ Ideal for developers looking to **learn by building**, this project demonstrates
 
 ## 📸 Screenshots
 
-### 🏠 Home Screen – Public Feed
-Feed principal con publicaciones de todos los usuarios, donde puedes dar like, comentar o guardar.
+### 🏠 Home Screen – Public Feed  
+Main feed displaying posts from all users. You can like, comment, or bookmark any post.
 
-![Home Screen](./screenshots/home.png)
-
----
-
-### 🔖 Bookmarks Screen – Saved Posts
-Muestra tus publicaciones guardadas para leerlas o revisarlas más tarde.
-
-![Bookmarks Screen](./screenshots/bookmarks.png)
+![Home Screen](./assets/screenshots/home.png)
 
 ---
 
-### 🔔 Notifications Screen – Activity Feed
-Recibe notificaciones en tiempo real cuando te den like, te sigan o comenten tus publicaciones.
+### 🔖 Bookmarks Screen – Saved Posts  
+View all your saved posts for easy access later.
 
-![Notifications Screen](./screenshots/notifications.png)
-
----
-
-### 📤 Create Post – Upload Media
-Pantalla para crear nuevas publicaciones subiendo imágenes desde tu dispositivo móvil.
-
-![Create Post Screen](./screenshots/create.png)
+![Bookmarks Screen](./assets/screenshots/bookmarks.png)
 
 ---
 
-### 👤 Profile Screen – Your Profile
-Edita tu perfil, ve tus publicaciones y gestiona tus seguidores desde esta pantalla personalizada.
+### 🔔 Notifications Screen – Activity Feed  
+Get real-time notifications when someone likes, follows, or comments on your posts.
 
-![Profile Screen](./screenshots/profile.png)
+![Notifications Screen](./assets/screenshots/notifications.png)
 
 ---
 
-### 👥 User Profile – Follow Other Users
-Explora perfiles de otros usuarios, visualiza sus publicaciones y síguelos para mantenerte al tanto.
+### 📤 Create Post – Upload Media  
+Create new posts by uploading images from your device.
 
-![User Profile Screen](./screenshots/user-profile.png)
+![Create Post Screen](./assets/screenshots/create.png)
+
+---
+
+### 👤 Profile Screen – Your Profile  
+Edit your profile, manage your posts, and view your followers.
+
+![Profile Screen](./assets/screenshots/profile.png)
+
+---
+
+### 👥 User Profile – Follow Other Users  
+Explore other user profiles, see their posts, and follow them to stay updated.
+
+![User Profile Screen](./assets/screenshots/user-profile.png)
 
 ---
 
