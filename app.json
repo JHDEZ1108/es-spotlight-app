@@ -20,7 +20,7 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.ico",
+      "favicon": "./assets/images/icon.png",
       "name": "Todo List App"
     },
     "plugins": [

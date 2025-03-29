@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import { Tabs } from "expo-router";
 import { useTheme } from '@/context/ThemeProvider';
 import { ThemeColors } from 'ThemeTypes';
@@ -8,7 +8,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';     
 import Ionicons from '@expo/vector-icons/Ionicons'; 
 
-
+import { useKeyboardVisible } from '@/hooks/useKeyboardVisible';
 interface TabIconProps {
   focused: boolean;
   icon: React.ReactElement;
@@ -27,7 +27,7 @@ function createStyles(theme: ThemeColors) {
       alignItems: 'center',
       borderRadius: 100,
       overflow: 'hidden',
-      marginTop: 16,
+      marginTop: Platform.OS === 'web' ? 0 : 16,
       backgroundColor: theme.primary,
       paddingHorizontal: 10,
       paddingVertical: 5,
@@ -35,7 +35,7 @@ function createStyles(theme: ThemeColors) {
     tab: {
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: 16,
+      marginTop: Platform.OS === 'web' ? 0 : 16,
       borderRadius: 100,
       minHeight: 64,
     },
@@ -83,6 +83,7 @@ function TabIcon({ focused, title }: TabIconProps) {
 
 export default function TabsLayout() {
   const { theme } = useTheme();
+  const isKeyboardVisible = useKeyboardVisible();
 
   return (
     <Tabs
@@ -96,6 +97,7 @@ export default function TabsLayout() {
         },
         tabBarStyle: {
           backgroundColor: theme.surface,
+          display: isKeyboardVisible ? 'none' : 'flex',
           borderRadius: 50,
           marginHorizontal: 20,
           marginBottom: 36,

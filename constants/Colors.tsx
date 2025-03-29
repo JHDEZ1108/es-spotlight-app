@@ -6,7 +6,7 @@ export const Colors = {
     secondary: "#9FC131",  // Used for accents that require less prominence than primary.
     secondaryVariant: "#B5D352",  // Used for hover states on secondary interactive elements.
     background: "#fdffff",  // Main background color for all screens.
-    surface: "#fffffd",  // Background color for elements like cards and modals.
+    surface: "#f6f6f6",  // Background color for elements like cards and modals.
     error: "#D32F2F",  // Used for error messages and icons.
     onPrimary: "#fdffff",  // Text color on primary background.
     onSecondary: "#fdffff",  // Text color on secondary background.

@@ -131,7 +131,7 @@ export default function Profile() {
           onPress={Keyboard.dismiss}
         >
           <KeyboardAvoidingView
-            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            behavior={Platform.OS !== "web" ? "padding" : "height"}
             style={styles.modalContainer}
           >
             <View style={styles.modalContent}> 
@@ -186,7 +186,7 @@ export default function Profile() {
             <View style={styles.postDetailContainer}>
               <View style={styles.postDetailHeader}>
                 <TouchableOpacity onPress={() => setSelectedPost(null)}>
-                  <Ionicons name="close" size={24} color={theme.onBackground} />
+                  <Ionicons name="close" size={24} color={theme.onPrimary} />
                 </TouchableOpacity>
               </View>
               <Image

@@ -203,7 +203,7 @@ export function createStyles(theme: ThemeColors) {
       paddingVertical: 8,
       paddingHorizontal: 16,
       marginRight: 12,
-      backgroundColor: theme.secondary,
+      backgroundColor: theme.surface,
       borderRadius: 20,
       fontSize: 14,
     },

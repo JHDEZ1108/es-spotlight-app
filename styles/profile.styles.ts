@@ -172,11 +172,11 @@ export function createStyles(theme: ThemeColors) {
     },
     modalBackdrop: {
       flex: 1,
-      backgroundColor: "rgba(0, 0, 0, 0.9)",
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
       justifyContent: "center",
     },
     postDetailContainer: {
-      backgroundColor: theme.background,
+      backgroundColor: "rgba(0, 0, 0, 0.0)",
       maxHeight: height * 0.9,
     },
     postDetailHeader: {

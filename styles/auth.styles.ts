@@ -58,7 +58,7 @@ export function createStyles(theme: ThemeColors) {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: theme.background,
+      backgroundColor: theme.onBackground,
       paddingVertical: 16,
       marginVertical: 16,
       paddingHorizontal: 24,

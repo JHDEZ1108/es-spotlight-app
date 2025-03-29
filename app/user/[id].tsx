@@ -46,7 +46,7 @@ export default function UserProfileScreen() {
       {/* Header with back button and username */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBack}>
-          <Ionicons name="arrow-back" size={24} color={theme.onBackground} />
+          <Ionicons name="arrow-back" size={24} color={theme.primary} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>{profile.username}</Text>
         <View style={{ width: 24 }} />
