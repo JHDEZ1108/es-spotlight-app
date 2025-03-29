@@ -75,7 +75,7 @@ Ideal for developers looking to **learn by building**, this project demonstrates
 ### 🔐 Authentication Screen – Google Sign In  
 Simple and secure login using Google, powered by Clerk authentication.
 
-![Auth Screen](./screenshots/auth.png)
+![Auth Screen](./assets/screenshots/auth.png)
 
 ---
 
