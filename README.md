@@ -1,75 +1,118 @@
-# React Native Expo Template
+# 📱 React Native Social Media App with Expo, Clerk & Convex
 
-## Introduction
+A fully functional, cross-platform **social media app** built using **React Native** and **Expo**, powered by **Clerk** for authentication and **Convex** for real-time backend operations.
 
-This repository serves as a **boilerplate** or **template** for kickstarting React Native projects using Expo. It includes a pre-configured theme toggle for dark and light modes and a basic setup that adheres to best practices in modern mobile app development. This template aims to reduce the initial setup time and provides a clean and organized structure for both new and experienced developers.
-
-## Features
-
-- **Expo Managed Workflow**: Utilizing Expo for easy development, build, and deployment processes.
-- **Dark and Light Theme**: Integrated theme management with a toggle switch.
-- **TypeScript Support**: Ensures code reliability and predictability through strong typing.
-- **Essential Libraries Included**: Contains setup for navigation, state management, and more.
-
-## Getting Started
-
-### Prerequisites
-
-Before you begin, ensure you have the following installed on your system:
-- Node.js (LTS version)
-- npm or yarn (as a package manager)
-- Expo CLI
-  ```bash
-  npm install -g expo-cli
-  ```
-
-### Setup Instructions
-
-1. **Clone the Repository**
-
-   Clone this repository to your local machine using the following command:
-   ```bash
-   git clone git@github.com:Effort-Stack/react-native-expo-template.git
-   ```
-
-2. **Install Dependencies**
-
-   Navigate into the cloned repository directory and install the required dependencies:
-   ```bash
-   cd react-native-expo-template
-   npm install
-   ```
-   or if you prefer using `yarn`:
-   ```bash
-   yarn install
-   ```
-
-3. **Start the Development Server**
-
-   Once the installation is complete, you can start the Expo development server:
-   ```bash
-   expo start
-   ```
-   This command will start the Metro Bundler, which is used to compile and serve your project.
-
-4. **Open the Project**
-
-   - You can open the project on a physical device by scanning the QR code displayed in the terminal or within the Expo Developer Tools in a web browser.
-   - Alternatively, you can use an Android or iOS emulator to run the project.
-
-## Usage
-
-This template is designed as a starting point. You can add more components and features as needed for your specific application requirements. Modify, extend, and adapt it to suit your project needs.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-
-- Thanks to all contributors who participate in developing and maintaining this template.
-- React Native community for continuous support and inspiration.
+Ideal for developers looking to **learn by building**, this project demonstrates real-world implementations of mobile UI/UX, backend integration, and advanced features found in modern social platforms.
 
 ---
 
+## 🚀 Key Features
+
+- 🚀 **React Native + Expo** – Build cross-platform mobile apps with React knowledge  
+- 📱 **Real-time Social Media App** – Works seamlessly on iOS, Android, and emulators  
+- 🔐 **Authentication with Clerk** – Seamless Google login integration  
+- 🔄 **Convex Backend** – Powers real-time features and data management  
+- 📊 **7 Core Screens** – Auth, Home, Bookmarks, Create, Notifications, Profile, and User Profiles  
+- ❤️ **Interactive Features** – Like, comment, bookmark, and follow users  
+- 🖼️ **Media Handling** – Upload and share images from your device  
+- 🔔 **Notification System** – Real-time like, follow, and comment notifications  
+- ✏️ **Profile Editing** – Animated modal for easy profile customization  
+- 📱 **Fundamental Components** – Learn essential React Native UI patterns  
+- 🚀 **Special Files & Folder Structure** – Understand app, tabs, and layout structure  
+- 📚 **Mobile Dev Concepts** – Splash screen, SafeAreaView, tab/stack navigation  
+- ⚡ **Performance Optimization** – Smooth user experience  
+- 🎨 **Custom Styling** – Add your own fonts and app icons  
+- 🔄 **Webhooks Integration** – Learn interview-ready backend concepts  
+
+---
+
+## 🧱 Tech Stack
+
+| Technology  | Description                                 |
+|-------------|---------------------------------------------|
+| [Expo](https://expo.dev/)           | Cross-platform framework for React Native  |
+| [React Native](https://reactnative.dev/) | Mobile UI library with native performance |
+| [Clerk](https://clerk.dev/)         | Auth provider with support for social login |
+| [Convex](https://www.convex.dev/)   | Real-time backend with database & functions |
+| [React Navigation](https://reactnavigation.org/) | Stack and tab navigation in React Native |
+| [Reanimated](https://docs.swmansion.com/react-native-reanimated/) | Declarative animations for smooth UI      |
+
+---
+
+## ⚙️ Setup & Installation
+
+1. **Clone the repo**
+   ```bash
+   git clone git@github.com:JHDEZ1108/es-spotlight-app.git
+   cd es-spotlight-app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npx expo start
+   ```
+
+> Make sure to set up your **Clerk** and **Convex** projects and link their credentials properly in the `.env` or config files.
+
+---
+
+## 💡 Ideal For:
+
+- Learning how to structure scalable React Native apps  
+- Practicing authentication and real-time data sync  
+- Preparing for interviews with full-stack mobile experience  
+- Exploring advanced UI/UX patterns and navigation  
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Screen – Public Feed
+Feed principal con publicaciones de todos los usuarios, donde puedes dar like, comentar o guardar.
+
+![Home Screen](./screenshots/home.png)
+
+---
+
+### 🔖 Bookmarks Screen – Saved Posts
+Muestra tus publicaciones guardadas para leerlas o revisarlas más tarde.
+
+![Bookmarks Screen](./screenshots/bookmarks.png)
+
+---
+
+### 🔔 Notifications Screen – Activity Feed
+Recibe notificaciones en tiempo real cuando te den like, te sigan o comenten tus publicaciones.
+
+![Notifications Screen](./screenshots/notifications.png)
+
+---
+
+### 📤 Create Post – Upload Media
+Pantalla para crear nuevas publicaciones subiendo imágenes desde tu dispositivo móvil.
+
+![Create Post Screen](./screenshots/create.png)
+
+---
+
+### 👤 Profile Screen – Your Profile
+Edita tu perfil, ve tus publicaciones y gestiona tus seguidores desde esta pantalla personalizada.
+
+![Profile Screen](./screenshots/profile.png)
+
+---
+
+### 👥 User Profile – Follow Other Users
+Explora perfiles de otros usuarios, visualiza sus publicaciones y síguelos para mantenerte al tanto.
+
+![User Profile Screen](./screenshots/user-profile.png)
+
+---
+
+Made with ❤️ by Josué Hernández
 Happy Coding! 🚀
