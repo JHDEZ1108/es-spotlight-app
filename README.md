@@ -72,6 +72,13 @@ Ideal for developers looking to **learn by building**, this project demonstrates
 
 ## 📸 Screenshots
 
+### 🔐 Authentication Screen – Google Sign In  
+Simple and secure login using Google, powered by Clerk authentication.
+
+![Auth Screen](./screenshots/auth.png)
+
+---
+
 ### 🏠 Home Screen – Public Feed  
 Main feed displaying posts from all users. You can like, comment, or bookmark any post.
 
